@@ -4,7 +4,7 @@
       body {
         background-color: #71efb9;
       }
-  
+
     </style>
   </head>
     <body>
@@ -20,11 +20,15 @@
       <% end %>
       
       <p>
-        The secret number is <%= number %><br>
+        <% if cheat == "true" %>
+          The secret number is <%= number %><br>
+        <% end %>
+      
         <%= message %><br>
       </p>
       <form>
         <input type='text' name='guess' />
+        <input type='hidden' name='cheat' />
         <input type='submit' value='Guess!' />
       </form>
     </body>

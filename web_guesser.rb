@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'pry'
 
 NUMBER = rand(100)
 
@@ -21,8 +22,10 @@ end
 
 get '/' do
   guess = params["guess"]
+  cheat = params["cheat"]
+  
   message = check_guess(guess)
-  erb :index, :locals => {:number => NUMBER, :message => message, :guess => guess}
+  erb :index, :locals => {:number => NUMBER, :message => message, :guess => guess, :cheat => cheat}
 end
 
 
