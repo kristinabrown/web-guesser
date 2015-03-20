@@ -1,6 +1,24 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      body {
+        background-color: #71efb9;
+      }
+  
+    </style>
+  </head>
     <body>
+      <% if guess.to_i > number %> 
+        <style>
+          body {background-color: #ca5e71;}
+        </style>
+      <% end %>
+      <% if guess && guess.to_i < number %>
+        <style>
+          body {background-color: rgba(228, 234, 174, 0.97);}
+        </style>
+      <% end %>
+      
       <p>
         The secret number is <%= number %><br>
         <%= message %><br>
