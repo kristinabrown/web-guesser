@@ -1,13 +1,17 @@
 <html>
   <head>
     <style>
-      body {
-        background-color: #71efb9;
-      }
-
+    body {
+      font-family: monospaced;
+      font-weight: bold;
+      color: #330889;
+    }
     </style>
   </head>
     <body>
+      <p>
+        Guess a number between 0 and 100.
+      </p>
       <% if guess.to_i > number %> 
         <style>
           body {background-color: #ca5e71;}
@@ -18,12 +22,16 @@
           body {background-color: rgba(228, 234, 174, 0.97);}
         </style>
       <% end %>
+      <% if guess.to_i == number %>
+      <style>
+        body {background-color: #71efb9;}
+      </style>
+      <% end %>
       
       <p>
         <% if cheat == "true" %>
           The secret number is <%= number %><br>
         <% end %>
-      
         <%= message %><br>
       </p>
       <form>
@@ -33,5 +41,4 @@
       </form>
     </body>
 </html>
-
 
